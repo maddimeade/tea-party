@@ -1,0 +1,9 @@
+[
+  { "id": 1, "name": "Green Tea", "price": 3.5, "pathToImage": "/images/green-tea.jpg" },
+  { "id": 2, "name": "Black Tea", "price": 4.0, "pathToImage": "/images/black-tea.jpg" },
+  { "id": 3, "name": "Jasmine Tea", "price": 3.8, "pathToImage": "/images/herbal-tea.jpg" },
+  { "id": 4, "name": "Rose Tea", "price": 3.8, "pathToImage": "/images/herbal-tea.jpg" },
+  { "id": 5, "name": "Raspberry Tea", "price": 3.8, "pathToImage": "/images/herbal-tea.jpg" },
+  { "id": 6, "name": "Lemon Tea", "price": 3.8, "pathToImage": "/images/herbal-tea.jpg" },
+  { "id": 7, "name": "Hibiscus Tea", "price": 3.8, "pathToImage": "/images/herbal-tea.jpg" }
+]
