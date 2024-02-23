@@ -2,9 +2,14 @@ import { useReducer, createContext } from "react";
 import { ADD_TO_CART, REMOVE_FROM_CART } from '../atoms/Constants';
 
 //useContext
-
+//The context object is created in this file
+//The TeaShopContext.Provider is passing cartState and dispatch to its children without having to pass through props
+//We export the Context and Provider to be used elsewhere in the app
 
 //useReducer
+//cartReducer specifies how the state should be updated in different scenarios
+//useReducer takes a cartReducer and an initial state
+//It returns an array with two elements: cartState and a dispatch function.
 
 const TeaShopContext = createContext();
 
@@ -20,10 +25,10 @@ const cartReducer = (state, action) => {
 };
 
 const TeaShopProvider = ({ children }) => {
-  const [cartState, dispatch] = useReducer(cartReducer, { cart: [] });
+  const [cartState, updateCartDispatch] = useReducer(cartReducer, { cart: [] });
 
   return (
-    <TeaShopContext.Provider value={{ cartState, dispatch }}>
+    <TeaShopContext.Provider value={{ cartState, updateCartDispatch }}>
       {children}
     </TeaShopContext.Provider>
   );

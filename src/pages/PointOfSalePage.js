@@ -4,7 +4,11 @@ import ShoppingCart from '../molecules/ShoppingCart';
 import TeaMenu from '../molecules/TeaMenu';
 import ShoppingCartButton from '../atoms/ShoppingCartButton';
 
-//useState 
+//useCallback
+//simplified example, 
+//will cache the function meaning it doesn't get recreated on every render
+//toggleCart cares about the showCart start
+//I should be able to refresh, and showCart will stay the same
 
 const PointOfSalePage = () => {
   console.log('PointOfSalePage rendered');

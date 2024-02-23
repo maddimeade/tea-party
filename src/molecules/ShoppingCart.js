@@ -11,16 +11,14 @@ import { REMOVE_FROM_CART } from '../atoms/Constants';
 import { TeaShopContext } from './TeaShopProvider';
 
 //useEffect
-//used in this file to rerender every time the cart changes, and reset the total price
+//used in this file to rerender every time the cart changes, and updates the total price
 
 //useState
 //used in this file to change and display the cart total
 
 const ShoppingCart = () => {
-  const { cartState, dispatch } = useContext(TeaShopContext);
+  const { cartState, updateCartDispatch } = useContext(TeaShopContext);
   const [cartTotal, setCartTotal] = useState(0);
-
-  //put calculate total in custom hook and call here
 
   useEffect(() => {
     const total = cartState.cart.reduce(
@@ -31,7 +29,7 @@ const ShoppingCart = () => {
   }, [cartState.cart]);
 
   const handleRemoveFromCart = (teaId) => {
-    dispatch({ type: REMOVE_FROM_CART, payload: { id: `${teaId}` } });
+    updateCartDispatch({ type: REMOVE_FROM_CART, payload: { id: `${teaId}` } });
   };
 
   return (

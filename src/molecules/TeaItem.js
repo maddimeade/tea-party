@@ -9,14 +9,14 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 
 const TeaItem = ({ tea }) => {
-  const { cartState, dispatch } = useContext(TeaShopContext);
+  const { cartState, updateCartDispatch } = useContext(TeaShopContext);
   const [count, setCount] = useState(1);
 
   // Check if the tea item is already in the cart
   const isInCart = cartState.cart.some((item) => item.id === `${tea.id}`);
 
   const addToCart = () => {
-    dispatch({ type: ADD_TO_CART, payload: { id: `${tea.id}`, tea, count } });
+    updateCartDispatch({ type: ADD_TO_CART, payload: { id: `${tea.id}`, tea, count } });
   };
 
   return (
